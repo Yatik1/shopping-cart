@@ -1,12 +1,13 @@
 const mongoose = require("mongoose")
+const dbgr = require("debug")("development:mongoose")
 
 const dbConnect = async () => {
     try{
         await mongoose.connect(process.env.MONGODB_URL)
-        console.log("Database is connected !");
+        dbgr("Database is connected");
         
     } catch (error) {
-        console.log("Error Connecting to the Database" , error);
+        dbgr("Error Connecting to the Database" , error);
         
     }
 }
