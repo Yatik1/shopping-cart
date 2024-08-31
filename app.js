@@ -4,6 +4,7 @@ const app = express()
 const cookieParser = require("cookie-parser")
 const dotenv = require("dotenv")
 const dbConnect = require("./config/dbConnect")
+const dbgr = require("debug")("development:app")
 
 const ownersRouter = require("./routes/owners.routes")
 const productsRouter = require("./routes/products.routes")
@@ -27,5 +28,5 @@ app.use("/user",usersRouter)
 app.use("/products" , productsRouter)
 
 app.listen(3000 , () => {
-    console.log("App is running on PORT 3000")
+    dbgr("App is running on PORT 3000")
 })
