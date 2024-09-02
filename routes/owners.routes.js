@@ -25,5 +25,10 @@ router.post("/create" , async (req,res) => {
 
 })
 
+router.get("/admin" , async (req,res) => {
+    let success = req.flash("success")
+    res.render("createproducts" , {success})
+})
+
 module.exports = router
 
