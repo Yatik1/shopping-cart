@@ -7,6 +7,7 @@ const dbConnect = require("./config/dbConnect")
 const dbgr = require("debug")("development:app")
 const expressSession = require("express-session")
 const flash = require("flash")
+const path = require("path")
 
 const indexRouter = require("./routes/index.routes")
 const ownersRouter = require("./routes/owners.routes")
@@ -26,6 +27,9 @@ app.use(expressSession({
 }))
 
 app.use(flash())
+app.use(express.static(path.join(__dirname , "public")))
+
+app.set("view engine" , "ejs")
 
 dbConnect()
 
