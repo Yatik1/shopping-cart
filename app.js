@@ -35,8 +35,8 @@ dbConnect()
 
 app.use("/",indexRouter)
 
-app.use("/owner" , ownersRouter)
-app.use("/user",usersRouter)
+app.use("/owners" , ownersRouter)
+app.use("/users",usersRouter)
 app.use("/products" , productsRouter)
 
 app.listen(3000 , () => {
